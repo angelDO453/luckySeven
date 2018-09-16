@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!---------------------------------------------------
+Name: Angel D. Ortiz
+Date Created: 9/10/2018
+Most recent revision: 9/14/2018
+Description: This project is designed to play a mock-up lucky seven game.
+The intro screen on the html page will display the title, the play button, 
+and the betting amount. The javascript will startup when the user clicks on the play button. 
+Afterward, the program will ask the user for a starting amount (it will check if this 
+amount is negative or 0). With this starting amount the program will begin betting 
+the money until it reaches 0 (winner gets 4 dollars and if not get deducted a dollar). 
+Lastly, it will display the results of the game in a table on the html webpage: max 
+amount won, # of rolls to reach max, # of rolls to reach 0, and starting amount.  
+The user can hit the play button to play the game again. 
+----------------------------------------------------->
+<html lang="en">
+<head>
+
+    <script type="text/JavaScript" src="luckySeven.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet" type="text/css" />
+		
+</head>
+<body>
+    <h1 style="padding-left: 20px;">Lucky Sevens</h1>
+	
+	<form name="luckyGame" onreset="playForm();" class="form-inline"><!--form for the play button and starting amount display-->
+		<fieldset>
+			<label for="startingCash" style="padding-left: 40px;">Starting Bet:</label>
+			<input type="number" class="form-control" id="startingCash" style="width: 25%;">
+			
+		</fieldset>
+		
+		<div name="contanButton" style="padding-left: 70px; padding-bottom: 10px">
+			<button type="reset" id="playButton" class="btn">Play</button>
+		</div>
+    </form>
+  
+  <table id="results" class="table table-bordered" style="display:none; padding-left: 10px;">
+		<caption style="text-align:center; font-size: 150%;">Results</caption><!--table is not enable till the .js is done -->
+        <tbody>
+            <tr bgcolor="#c1cdcd">
+                <td>Starting Bet</td>
+                <td><span id="startingBet"></span></td>
+            </tr>
+            <tr bgcolor="#e0eeee">
+                <td>Total Rolls Before Going Broke</td>
+                <td><span id="rollCountBroke"></span></td>
+            </tr>
+            <tr bgcolor="#f0ffff">
+                <td>Highest Amount Won</td>
+                <td><span id="highestBet"></span></td>
+            </tr>
+            <tr bgcolor="ffffff">
+                <td>Roll Count at Highest Amount Won</td>
+                <td><span id="rollCountHigh"></span></td>
+            </tr>
+        </tbody>
+    </table>
+	
+</body>
+
+</html>
